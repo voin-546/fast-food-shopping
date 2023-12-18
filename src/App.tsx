@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+import Logo from "./icon.svg";
+import Container from "./components/Container";
+import Card from "./components/Card";
+export default function App () {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header>
+        <Container>
+            <a href="/">
+              <img src={Logo} alt="Logo"/>
+            </a>
+            <nav>
+              <ul>
+                <li><a href="/" className="active">Home</a></li>
+                <li><a href="/pages">Pages</a></li>
+                <li><a href="/offer">Our Offer</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/shop">Shop</a></li>
+              </ul>
+              <a href="/signup" className="btn">Order Now</a>
+            </nav>
+        </Container>
+      </header>   
+      <section className="hero">
+        <Container>
+          <div className="text">
+            <p className="lorem">Fast Food Burgers</p>
+            <h1>The fastest food, for instant hunger.</h1>
+            <p className="ipsum">Some food has looked so awful that it's looked like something that the dog's brought home, yet after one mouthful I've been left eating my thoughts, my words & my food and gone back for seconds.</p>
+            <a href="/signup">Order Now</a>
+          </div>
+        </Container>
+      </section>   
+      <section className="cards">
+          <Container>
+              <Card></Card>
+          </Container>
+      </section>
     </>
   )
 }
 
-export default App
